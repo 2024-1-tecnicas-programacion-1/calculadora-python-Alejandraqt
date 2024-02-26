@@ -1,3 +1,5 @@
+import math
+
 def calcular(numero1, numero2, operacion):
     respuesta = 0
     match operacion:
@@ -15,10 +17,13 @@ def calcular(numero1, numero2, operacion):
             respuesta = numero1 / numero2
         case '^':
             # Operación potencia
-            respuesta = numero1 ** numero2
+            respuesta = math.pow(numero1, numero2)
         case '%':
             # Operación modulo
             respuesta = numero1 % numero2
+        case 'r':
+            # Operación raiz
+            respuesta = numero1 ** (1/numero2)
         case _:
             raise ValueError("Operación inválida.")
 
